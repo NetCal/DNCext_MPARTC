@@ -1,0 +1,5 @@
+* Separated MPARTC analysis from DiscoDNC
+* Refactoring MinPlus_MPARTC
+  - Moving to package minplus.mpartc
+* Refactoring package mpa_rtc_pwaffine
+  - Renaming to mpartc.pwaffine
