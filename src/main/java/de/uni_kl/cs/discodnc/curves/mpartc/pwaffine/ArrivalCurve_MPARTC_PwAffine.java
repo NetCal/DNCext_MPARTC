@@ -25,7 +25,7 @@
  *
  */
 
-package de.uni_kl.cs.discodnc.curves.mpa_rtc_pwaffine;
+package de.uni_kl.cs.discodnc.curves.mpartc.pwaffine;
 
 import ch.ethz.rtc.kernel.Curve;
 import ch.ethz.rtc.kernel.SegmentList;

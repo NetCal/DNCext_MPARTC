@@ -25,7 +25,7 @@
  *
  */
 
-package de.uni_kl.cs.discodnc.minplus;
+package de.uni_kl.cs.discodnc.minplus.mpa_rtc;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -43,11 +43,12 @@ import de.uni_kl.cs.discodnc.curves.ArrivalCurve;
 import de.uni_kl.cs.discodnc.curves.Curve;
 import de.uni_kl.cs.discodnc.curves.MaxServiceCurve;
 import de.uni_kl.cs.discodnc.curves.ServiceCurve;
-import de.uni_kl.cs.discodnc.curves.mpa_rtc_pwaffine.Curve_MPARTC_PwAffine;
+import de.uni_kl.cs.discodnc.curves.mpartc.pwaffine.Curve_MPARTC_PwAffine;
+import de.uni_kl.cs.discodnc.minplus.MinPlus;
 
-public enum MinPlus_MPA_RTC implements MinPlus {
+public enum MinPlus_MPARTC implements MinPlus {
 
-	MINPLUS_MPA_RTC;
+	MINPLUS_MPARTC;
 	// --------------------------------------------------------------------------------------------------------------
 	// Min-Plus-Operation Dispatching
 	// --------------------------------------------------------------------------------------------------------------

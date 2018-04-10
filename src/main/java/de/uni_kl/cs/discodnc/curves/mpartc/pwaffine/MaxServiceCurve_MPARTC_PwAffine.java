@@ -25,59 +25,59 @@
  *
  */
 
-package de.uni_kl.cs.discodnc.curves.mpa_rtc_pwaffine;
+package de.uni_kl.cs.discodnc.curves.mpartc.pwaffine;
 
 import ch.ethz.rtc.kernel.Curve;
 import ch.ethz.rtc.kernel.SegmentList;
-import de.uni_kl.cs.discodnc.curves.ServiceCurve;
+import de.uni_kl.cs.discodnc.curves.MaxServiceCurve;
 
-public class ServiceCurve_MPARTC_PwAffine extends Curve_MPARTC_PwAffine implements ServiceCurve {
+public class MaxServiceCurve_MPARTC_PwAffine extends Curve_MPARTC_PwAffine implements MaxServiceCurve {
     // --------------------------------------------------------------------------------------------------------------
     // Constructors
     // --------------------------------------------------------------------------------------------------------------
-    public ServiceCurve_MPARTC_PwAffine() {
+    protected MaxServiceCurve_MPARTC_PwAffine() {
         super();
     }
 
-    public ServiceCurve_MPARTC_PwAffine(int segment_count) {
+    public MaxServiceCurve_MPARTC_PwAffine(int segment_count) {
         super(segment_count);
     }
 
-    public ServiceCurve_MPARTC_PwAffine(de.uni_kl.cs.discodnc.curves.Curve curve) {
+    public MaxServiceCurve_MPARTC_PwAffine(de.uni_kl.cs.discodnc.curves.Curve curve) {
         copy(curve);
     }
 
-    public ServiceCurve_MPARTC_PwAffine(String service_curve_str) throws Exception {
-        super.initializeCurve(service_curve_str);
+    public MaxServiceCurve_MPARTC_PwAffine(String max_service_curve_str) throws Exception {
+        super.initializeCurve(max_service_curve_str);
     }
 
-    public ServiceCurve_MPARTC_PwAffine(SegmentList aperSegments) {
+    public MaxServiceCurve_MPARTC_PwAffine(SegmentList aperSegments) {
         rtc_curve = new Curve(aperSegments);
     }
 
-    public ServiceCurve_MPARTC_PwAffine(SegmentList perSegments, double py0, long period, double pdy) {
+    public MaxServiceCurve_MPARTC_PwAffine(SegmentList perSegments, double py0, long period, double pdy) {
         rtc_curve = new Curve(perSegments, py0, period, pdy);
     }
 
-    public ServiceCurve_MPARTC_PwAffine(SegmentList perSegments, double py0, long period, double pdy, String name) {
+    public MaxServiceCurve_MPARTC_PwAffine(SegmentList perSegments, double py0, long period, double pdy, String name) {
         rtc_curve = new Curve(perSegments, py0, period, pdy, name);
     }
 
-    public ServiceCurve_MPARTC_PwAffine(SegmentList aperSegments, SegmentList perSegments, double px0, double py0,
-                                        long period, double pdy) {
+    public MaxServiceCurve_MPARTC_PwAffine(SegmentList aperSegments, SegmentList perSegments, double px0, double py0,
+                                           long period, double pdy) {
         rtc_curve = new Curve(aperSegments, perSegments, px0, py0, period, pdy);
     }
 
-    public ServiceCurve_MPARTC_PwAffine(SegmentList aperSegments, SegmentList perSegments, double px0, double py0,
-                                        long period, double pdy, String name) {
+    public MaxServiceCurve_MPARTC_PwAffine(SegmentList aperSegments, SegmentList perSegments, double px0, double py0,
+                                           long period, double pdy, String name) {
         rtc_curve = new Curve(aperSegments, perSegments, px0, py0, period, pdy, name);
     }
 
-    public ServiceCurve_MPARTC_PwAffine(SegmentList aperSegments, String name) {
+    public MaxServiceCurve_MPARTC_PwAffine(SegmentList aperSegments, String name) {
         rtc_curve = new Curve(aperSegments, name);
     }
 
-    public ServiceCurve_MPARTC_PwAffine(Curve c) {
+    public MaxServiceCurve_MPARTC_PwAffine(Curve c) {
         rtc_curve = c.clone();
     }
 
@@ -85,20 +85,21 @@ public class ServiceCurve_MPARTC_PwAffine extends Curve_MPARTC_PwAffine implemen
     // Interface Implementations
     // --------------------------------------------------------------------------------------------------------------
     @Override
-    public ServiceCurve_MPARTC_PwAffine copy() {
-        ServiceCurve_MPARTC_PwAffine sc_copy = new ServiceCurve_MPARTC_PwAffine();
-        sc_copy.copy(this);
-        return sc_copy;
+    public MaxServiceCurve_MPARTC_PwAffine copy() {
+        MaxServiceCurve_MPARTC_PwAffine msc_copy = new MaxServiceCurve_MPARTC_PwAffine();
+        msc_copy.copy(this);
+
+        return msc_copy;
     }
 
     @Override
     public boolean equals(Object obj) {
-        return (obj instanceof ServiceCurve_MPARTC_PwAffine) && super.equals(obj);
+        return (obj instanceof MaxServiceCurve_MPARTC_PwAffine) && super.equals(obj);
     }
 
     @Override
     public int hashCode() {
-        return "SC".hashCode() * super.hashCode();
+        return "MSC".hashCode() * super.hashCode();
     }
 
     /**
@@ -108,6 +109,6 @@ public class ServiceCurve_MPARTC_PwAffine extends Curve_MPARTC_PwAffine implemen
      */
     @Override
     public String toString() {
-        return "SC" + super.toString();
+        return "MSC" + super.toString();
     }
 }
