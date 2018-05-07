@@ -2,14 +2,20 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>de.uni_kl.cs.discodnc</groupId>
 	<artifactId>DiscoDNCext_MPARTC</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 
 	<name>DiscoDNCext_MPARTC - The Disco Deterministic Network Calculator extension for MPARTC</name>
 	<description>Deterministic Network Calculus (DNC) is a methodology for worst-case modeling and analysis of communication networks. It enables to derive deterministic bounds on a server’s backlog as well as a flow’s end-to-end delay. Given a directed graph of servers (server graph) and the flows crossing these servers, the Disco Deterministic Network Calculator (DiscoDNC) automates the derivation of bounds.</description>
 	<url>discodnc.cs.uni-kl.de</url>
-
+	
+	<parent>
+		<groupId>de.uni_kl.cs.discodnc</groupId>
+		<artifactId>DiscoDNC_meta</artifactId>
+		<version>2.5.0</version>
+		<relativePath>../DiscoDNC_meta</relativePath>
+	</parent>
+	
 	<licenses>
 		<license>
 			<name>GNU General Lesser Public License (LGPL) version 2.1</name>
@@ -44,12 +50,6 @@
 		<url>https://github.com/NetCal/DiscoDNCext_MPARTC/tree/master</url>
 	</scm>
 
-	<properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
-
 	<dependencies>
 
 		<dependency>
@@ -57,41 +57,13 @@
 			<artifactId>DiscoDNC</artifactId>
 			<version>2.5.0</version>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>ch.ethz.rtc.kernel</groupId>
 			<artifactId>rtc</artifactId>
 			<scope>system</scope>
 			<systemPath>${project.basedir}/lib/rtc.jar</systemPath>
 			<version>1.2</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-engine</artifactId>
-			<version>[5.0.0,5.0.3],[5.1.0]</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-params</artifactId>
-			<scope>test</scope>
-			<version>[5.0.0,5.0.3],[5.1.0]</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.junit.platform</groupId>
-			<artifactId>junit-platform-launcher</artifactId>
-			<version>[1.0.0,1.0.3],[1.1.0]</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.junit.platform</groupId>
-			<artifactId>junit-platform-suite-api</artifactId>
-			<version>[1.0.0,1.0.3],[1.1.0]</version>
-			<scope>test</scope>
 		</dependency>
 
 	</dependencies>
