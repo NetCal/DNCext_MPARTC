@@ -1,4 +1,9 @@
-/target/
 /.classpath
 /.project
-/.settings/
+/.gitignore
+/.settings
+.DS_Store
+/bin/
+/target/
+/doc/
+/lib/*
