@@ -35,12 +35,12 @@ import ch.ethz.rtc.kernel.Curve;
 import ch.ethz.rtc.kernel.Segment;
 import ch.ethz.rtc.kernel.SegmentList;
 import de.uni_kl.cs.discodnc.Calculator;
-import de.uni_kl.cs.discodnc.curves.CurvePwAffine;
+import de.uni_kl.cs.discodnc.curves.Curve_PwAffine;
 import de.uni_kl.cs.discodnc.curves.LinearSegment;
 import de.uni_kl.cs.discodnc.numbers.Num;
 import de.uni_kl.cs.discodnc.numbers.implementations.RealDoublePrecision;
 
-public class Curve_MPARTC_PwAffine implements CurvePwAffine {
+public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 	private static Curve_MPARTC_PwAffine instance = new Curve_MPARTC_PwAffine();
 
 	protected ch.ethz.rtc.kernel.Curve rtc_curve;
@@ -211,9 +211,9 @@ public class Curve_MPARTC_PwAffine implements CurvePwAffine {
 				this.token_buckets.add(((Curve_MPARTC_PwAffine) curve).token_buckets.get(i).copy());
 			}
 
-			this.is_delayed_infinite_burst = ((CurvePwAffine) curve).isDelayedInfiniteBurst();
-			this.is_rate_latency = ((CurvePwAffine) curve).isRateLatency();
-			this.is_token_bucket = ((CurvePwAffine) curve).isTokenBucket();
+			this.is_delayed_infinite_burst = ((Curve_PwAffine) curve).isDelayedInfiniteBurst();
+			this.is_rate_latency = ((Curve_PwAffine) curve).isRateLatency();
+			this.is_token_bucket = ((Curve_PwAffine) curve).isTokenBucket();
 		} else {
 			SegmentList segList_rtc = new SegmentList();
 			LinearSegment seg_tmp;
@@ -515,8 +515,8 @@ public class Curve_MPARTC_PwAffine implements CurvePwAffine {
 	}
 
 	@Override
-	public List<CurvePwAffine> getRL_Components() {
-		List<CurvePwAffine> tmp = new LinkedList<>();
+	public List<Curve_PwAffine> getRL_Components() {
+		List<Curve_PwAffine> tmp = new LinkedList<>();
 		if (this.is_rate_latency) {
 			tmp.add(this.copy());
 		} else {
@@ -537,8 +537,8 @@ public class Curve_MPARTC_PwAffine implements CurvePwAffine {
 	}
 
 	@Override
-	public List<CurvePwAffine> getTB_Components() {
-		List<CurvePwAffine> tmp = new LinkedList<>();
+	public List<Curve_PwAffine> getTB_Components() {
+		List<Curve_PwAffine> tmp = new LinkedList<>();
 		for (int i = 0; i < token_buckets.size(); i++) {
 			tmp.add(token_buckets.get(i));
 		}

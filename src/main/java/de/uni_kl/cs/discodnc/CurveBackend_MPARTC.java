@@ -3,7 +3,7 @@ package de.uni_kl.cs.discodnc;
 import java.io.File;
 
 import de.uni_kl.cs.discodnc.CurveBackend;
-import de.uni_kl.cs.discodnc.curves.CurvePwAffine;
+import de.uni_kl.cs.discodnc.curves.Curve_PwAffine;
 import de.uni_kl.cs.discodnc.curves.LinearSegment;
 import de.uni_kl.cs.discodnc.curves.mpartc.pwaffine.Curve_MPARTC_PwAffine;
 import de.uni_kl.cs.discodnc.curves.mpartc.pwaffine.LinearSegment_MPARTC_PwAffine;
@@ -19,7 +19,7 @@ public enum CurveBackend_MPARTC implements CurveBackend {
 	}
 
 	@Override
-	public CurvePwAffine getCurveFactory() {
+	public Curve_PwAffine getCurveFactory() {
 		return Curve_MPARTC_PwAffine.getFactory();
 	}
 
