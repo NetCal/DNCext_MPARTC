@@ -25,8 +25,8 @@
 
 	<developers>
 		<developer>
-			<name>Philipp Schon</name>
-			<email>schon@cs.uni-kl.de</email>
+			<name>Steffen Bondorf</name>
+			<email>bondorf@cs.uni-kl.de</email>
 			<organization>Distributed Computer Systems (DISCO) Lab at TU Kaiserslautern</organization>
 			<organizationUrl>https://disco.cs.uni-kl.de</organizationUrl>
 		</developer>
@@ -35,12 +35,6 @@
 			<email>matyesz79@gmail.com</email>
 			<organization></organization>
 			<organizationUrl></organizationUrl>
-		</developer>
-		<developer>
-			<name>Steffen Bondorf</name>
-			<email>bondorf@cs.uni-kl.de</email>
-			<organization>Distributed Computer Systems (DISCO) Lab at TU Kaiserslautern</organization>
-			<organizationUrl>https://disco.cs.uni-kl.de</organizationUrl>
 		</developer>
 	</developers>
 
