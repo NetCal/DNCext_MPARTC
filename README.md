@@ -6,3 +6,10 @@ Deterministic Network Calculus (DNC) is a methodology for worst-case modeling an
 
 This extension depends on the code restructuring of the DiscoDNC's v2.5 branch (version as of 2018-Aug-06).
 Please see https://github.com/NetCal/DiscoDNC/blob/v2.5/README.md for more information.
+
+
+## MPA RTC Curve Backend
+This code allows to use the curve backend implementation of the MPA RTC toolbox. Details can be found in the following publication:  
+    *Towards Unified Tool Support for Real-time Calculus & Deterministic Network Calculus  
+    (Philipp Schon, Steffen Bondorf),  
+    In Proc. of the 29th Euromicro Conference on Real-Time Systems (ECRTS 2017), Work-in-Progress Session, 2017*
