@@ -28,6 +28,8 @@
 package de.uni_kl.cs.discodnc.curves.mpartc.pwaffine;
 
 import ch.ethz.rtc.kernel.Segment;
+
+import de.uni_kl.cs.discodnc.Calculator;
 import de.uni_kl.cs.discodnc.curves.LinearSegment;
 import de.uni_kl.cs.discodnc.numbers.Num;
 
@@ -68,11 +70,11 @@ public class LinearSegment_MPARTC_PwAffine implements LinearSegment {
 	// Interface Implementations
 	// --------------------------------------------------------------------------------------------------------------
 	public Num f(Num x) {
-		return Num.getFactory().create(rtc_segment.yAt(x.doubleValue()));
+		return Num.getFactory(Calculator.getInstance().getNumBackend()).create(rtc_segment.yAt(x.doubleValue()));
 	}
 
 	public Num getX() {
-		return Num.getFactory().create(rtc_segment.x());
+		return Num.getFactory(Calculator.getInstance().getNumBackend()).create(rtc_segment.x());
 	}
 
 	public void setX(Num x) {
@@ -84,7 +86,7 @@ public class LinearSegment_MPARTC_PwAffine implements LinearSegment {
 	}
 
 	public Num getY() {
-		return Num.getFactory().create(rtc_segment.y());
+		return Num.getFactory(Calculator.getInstance().getNumBackend()).create(rtc_segment.y());
 	}
 
 	public void setY(Num y) {
@@ -96,7 +98,7 @@ public class LinearSegment_MPARTC_PwAffine implements LinearSegment {
 	}
 
 	public Num getGrad() {
-		return Num.getFactory().create(rtc_segment.s());
+		return Num.getFactory(Calculator.getInstance().getNumBackend()).create(rtc_segment.s());
 	}
 
 	public void setGrad(Num grad) {
@@ -119,11 +121,11 @@ public class LinearSegment_MPARTC_PwAffine implements LinearSegment {
 	}
 
 	public Num getXIntersectionWith(LinearSegment other) {
-		Num y1 = Num.getFactory().create(rtc_segment.y() - (rtc_segment.x() * rtc_segment.s()));
-		Num y2 = Num.getUtils().sub(other.getY(), Num.getUtils().mult(other.getX(), other.getGrad()));
+		Num y1 = Num.getFactory(Calculator.getInstance().getNumBackend()).create(rtc_segment.y() - (rtc_segment.x() * rtc_segment.s()));
+		Num y2 = Num.getUtils(Calculator.getInstance().getNumBackend()).sub(other.getY(), Num.getUtils(Calculator.getInstance().getNumBackend()).mult(other.getX(), other.getGrad()));
 
 		// returns NaN if lines are parallel
-		return Num.getUtils().div(Num.getUtils().sub(y2, y1), Num.getUtils().sub(this.getGrad(), other.getGrad()));
+		return Num.getUtils(Calculator.getInstance().getNumBackend()).div(Num.getUtils(Calculator.getInstance().getNumBackend()).sub(y2, y1), Num.getUtils(Calculator.getInstance().getNumBackend()).sub(this.getGrad(), other.getGrad()));
 	}
 
 	@Override
