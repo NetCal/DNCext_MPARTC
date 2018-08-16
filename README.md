@@ -9,7 +9,16 @@ Please see https://github.com/NetCal/DiscoDNC/blob/v2.5/README.md for more infor
 
 
 ## MPA RTC Curve Backend
+
 This code allows to use the curve backend implementation of the MPA RTC toolbox. Details can be found in the following publication:  
-    *Towards Unified Tool Support for Real-time Calculus & Deterministic Network Calculus  
-    (Philipp Schon, Steffen Bondorf),  
-    In Proc. of the 29th Euromicro Conference on Real-Time Systems (ECRTS 2017), Work-in-Progress Session, 2017*
+
+```plain
+@inproceedings{DiscoDNCv2:RTC,
+  author    = {Philipp Schon and Steffen Bondorf},
+  title     = {Towards Unified Tool Support for Real-time Calculus \& Deterministic Network Calculus},
+  booktitle = {Proc. of the Euromicro Conference on Real-Time Systems, Work-in-Progress Session},
+  series    = {ECRTS '17},
+  month     = {June},
+  year      = 2017
+}
+```
