@@ -4,11 +4,11 @@ import java.io.File;
 
 import de.uni_kl.cs.discodnc.AlgDncBackend;
 import de.uni_kl.cs.discodnc.algebra.MinPlus;
+import de.uni_kl.cs.discodnc.algebra.mpa_rtc_pwaffine.MinPlus_MPARTC;
 import de.uni_kl.cs.discodnc.curves.Curve_PwAffine;
 import de.uni_kl.cs.discodnc.curves.LinearSegment;
 import de.uni_kl.cs.discodnc.curves.mpartc.pwaffine.Curve_MPARTC_PwAffine;
 import de.uni_kl.cs.discodnc.curves.mpartc.pwaffine.LinearSegment_MPARTC_PwAffine;
-import de.uni_kl.cs.discodnc.minplus.mpa_rtc.MinPlus_MPARTC;
 
 public enum AlgDncBackend_MPARTC_PwAffine implements AlgDncBackend {
 	MPARTC_PWAFFINE;

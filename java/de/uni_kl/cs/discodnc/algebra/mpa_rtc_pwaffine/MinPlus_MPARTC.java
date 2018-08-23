@@ -25,7 +25,7 @@
  *
  */
 
-package de.uni_kl.cs.discodnc.minplus.mpa_rtc;
+package de.uni_kl.cs.discodnc.algebra.mpa_rtc_pwaffine;
 
 import java.util.HashSet;
 import java.util.Set;

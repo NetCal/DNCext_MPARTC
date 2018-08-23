@@ -29,6 +29,7 @@ package de.uni_kl.cs.discodnc.curves.mpartc.pwaffine;
 
 import ch.ethz.rtc.kernel.Curve;
 import ch.ethz.rtc.kernel.SegmentList;
+
 import de.uni_kl.cs.discodnc.curves.ArrivalCurve;
 
 public class ArrivalCurve_MPARTC_PwAffine extends Curve_MPARTC_PwAffine implements ArrivalCurve {
