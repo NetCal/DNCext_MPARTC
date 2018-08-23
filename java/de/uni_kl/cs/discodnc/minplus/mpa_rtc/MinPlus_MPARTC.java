@@ -30,25 +30,21 @@ package de.uni_kl.cs.discodnc.minplus.mpa_rtc;
 import java.util.HashSet;
 import java.util.Set;
 
-// Due to name collisions, these classes are not imported,
-// they are referenced by their fully qualified names.
-//import ch.ethz.rtc.kernel.Curve;
-//import Curve;
-
 import ch.ethz.rtc.kernel.CurveMath;
 import ch.ethz.rtc.kernel.Segment;
 import ch.ethz.rtc.kernel.SegmentList;
+
 import de.uni_kl.cs.discodnc.Calculator;
+import de.uni_kl.cs.discodnc.algebra.MinPlus;
 import de.uni_kl.cs.discodnc.curves.ArrivalCurve;
 import de.uni_kl.cs.discodnc.curves.Curve;
 import de.uni_kl.cs.discodnc.curves.MaxServiceCurve;
 import de.uni_kl.cs.discodnc.curves.ServiceCurve;
 import de.uni_kl.cs.discodnc.curves.mpartc.pwaffine.Curve_MPARTC_PwAffine;
-import de.uni_kl.cs.discodnc.minplus.MinPlus;
 
 public enum MinPlus_MPARTC implements MinPlus {
-
 	MINPLUS_MPARTC;
+	
 	// --------------------------------------------------------------------------------------------------------------
 	// Min-Plus-Operation Dispatching
 	// --------------------------------------------------------------------------------------------------------------
@@ -75,7 +71,7 @@ public enum MinPlus_MPARTC implements MinPlus {
 	// Java won't let us call this method "convolve" because it does not care about
 	// the Sets' types; tells that there's already another method taking the same
 	// arguments.
-	public Set<ServiceCurve> convolve_SCs_SCs(Set<ServiceCurve> service_curves_1, Set<ServiceCurve> service_curves_2)
+	public Set<ServiceCurve> convolve(Set<ServiceCurve> service_curves_1, Set<ServiceCurve> service_curves_2)
 			throws Exception {
 		return convolve_SCs_SCs(service_curves_1, service_curves_2, false);
 	}
