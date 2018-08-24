@@ -835,7 +835,7 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 		makeDelayedInfiniteBurst(ac_rtc, 0.0);
 		return ac_rtc;
 	}
-	
+  
 	public ArrivalCurve_MPARTC_PwAffine createPeakArrivalRate(double rate) {
 		ArrivalCurve_MPARTC_PwAffine ac_rtc = new ArrivalCurve_MPARTC_PwAffine();
 		makePeakRate(ac_rtc, rate);
