@@ -149,7 +149,7 @@ public enum MinPlus_MPARTC implements MinPlus {
 	}
 
 	// Arrival Curves and Max Service Curves
-	public Set<Curve> convolve_ACs_MSC(Set<ArrivalCurve> arrival_curves, MaxServiceCurve maximum_service_curve)
+	public Set<Curve> convolve_ACs_MaxSC(Set<ArrivalCurve> arrival_curves, MaxServiceCurve maximum_service_curve)
 			throws Exception {
 		// DNC operations work with DNC and MPA_RTC curves
 
@@ -166,7 +166,7 @@ public enum MinPlus_MPARTC implements MinPlus {
 		return results;
 	}
 
-	public Set<ArrivalCurve> convolve_ACs_EGamma(Set<ArrivalCurve> arrival_curves, MaxServiceCurve extra_gamma_curve)
+	public Set<ArrivalCurve> convolve_ACs_MaxScRate(Set<ArrivalCurve> arrival_curves, MaxServiceCurve extra_gamma_curve)
 			throws Exception {
 		// DNC operations work with DNC and MPA_RTC curves
 
