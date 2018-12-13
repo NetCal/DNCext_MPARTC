@@ -724,12 +724,6 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 		return new Curve_MPARTC_PwAffine(); // CurveRTC constructor's default behavior
 	}
 
-	public Curve_MPARTC_PwAffine createHorizontal(double y) {
-		Curve_MPARTC_PwAffine c_rtc = new Curve_MPARTC_PwAffine();
-		makeHorizontal(c_rtc, y);
-		return c_rtc;
-	}
-
 	/**
 	 * Creates a horizontal curve.
 	 *
@@ -738,7 +732,9 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 	 * @return a <code>Curve</code> instance
 	 */
 	public Curve_MPARTC_PwAffine createHorizontal(Num y) {
-		return createHorizontal(y.doubleValue());
+		Curve_MPARTC_PwAffine c_rtc = new Curve_MPARTC_PwAffine();
+		makeHorizontal(c_rtc, y.doubleValue());
+		return c_rtc;
 	}
 
 	// --------------------------------------------------------------------------------------------------------------
