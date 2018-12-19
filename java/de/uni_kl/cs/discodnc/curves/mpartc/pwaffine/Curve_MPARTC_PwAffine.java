@@ -36,6 +36,7 @@ import ch.ethz.rtc.kernel.Segment;
 import ch.ethz.rtc.kernel.SegmentList;
 
 import de.uni_kl.cs.discodnc.Calculator;
+import de.uni_kl.cs.discodnc.curves.Curve_Affine;
 import de.uni_kl.cs.discodnc.curves.Curve_PwAffine;
 import de.uni_kl.cs.discodnc.curves.LinearSegment;
 import de.uni_kl.cs.discodnc.numbers.Num;
@@ -513,8 +514,8 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 	}
 
 	@Override
-	public List<Curve_PwAffine> getRL_Components() {
-		List<Curve_PwAffine> tmp = new LinkedList<>();
+	public List<Curve_Affine> getRL_Components() {
+		List<Curve_Affine> tmp = new LinkedList<>();
 		if (this.is_rate_latency) {
 			tmp.add(this.copy());
 		} else {
@@ -535,8 +536,8 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 	}
 
 	@Override
-	public List<Curve_PwAffine> getTB_Components() {
-		List<Curve_PwAffine> tmp = new LinkedList<>();
+	public List<Curve_Affine> getTB_Components() {
+		List<Curve_Affine> tmp = new LinkedList<>();
 		for (int i = 0; i < token_buckets.size(); i++) {
 			tmp.add(token_buckets.get(i));
 		}
