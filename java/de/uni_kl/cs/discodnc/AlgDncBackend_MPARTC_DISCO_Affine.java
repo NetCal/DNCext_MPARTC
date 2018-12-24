@@ -31,18 +31,18 @@ import java.io.File;
 
 import de.uni_kl.cs.discodnc.AlgDncBackend;
 import de.uni_kl.cs.discodnc.algebra.MinPlus;
-import de.uni_kl.cs.discodnc.algebra.disco.pwaffine.MinPlus_Disco_PwAffine;
+import de.uni_kl.cs.discodnc.algebra.disco.affine.MinPlus_Disco_Affine;
 import de.uni_kl.cs.discodnc.curves.Curve_PwAffine;
 import de.uni_kl.cs.discodnc.curves.LinearSegment;
-import de.uni_kl.cs.discodnc.curves.mpartc.pwaffine.Curve_MPARTC_PwAffine;
-import de.uni_kl.cs.discodnc.curves.mpartc.pwaffine.LinearSegment_MPARTC_PwAffine;
+import de.uni_kl.cs.discodnc.curves.mpa_rtc.pw_affine.Curve_MPARTC_PwAffine;
+import de.uni_kl.cs.discodnc.curves.mpa_rtc.pw_affine.LinearSegment_MPARTC_PwAffine;
 
 public enum AlgDncBackend_MPARTC_DISCO_Affine implements AlgDncBackend {
 	MPARTC_PWAFFINEC_DISCO_AFFINEMP;
 
 	@Override
 	public MinPlus getMinPlus() {
-		return MinPlus_Disco_PwAffine.MINPLUS_DISCO_PWAFFINE;
+		return MinPlus_Disco_Affine.MINPLUS_DISCO_AFFINE;
 	}
 
 	@Override
@@ -68,6 +68,6 @@ public enum AlgDncBackend_MPARTC_DISCO_Affine implements AlgDncBackend {
 
     @Override
     public String toString() {
-        return assembleString(this.name(), MinPlus_Disco_PwAffine.MINPLUS_DISCO_PWAFFINE.name());
+        return assembleString(this.name(), MinPlus_Disco_Affine.MINPLUS_DISCO_AFFINE.name());
     }
 }

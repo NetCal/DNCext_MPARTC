@@ -25,7 +25,7 @@
  *
  */
 
-package de.uni_kl.cs.discodnc.algebra.mpa_rtc_pwaffine;
+package de.uni_kl.cs.discodnc.algebra.mpa_rtc.pw_affine;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -40,7 +40,7 @@ import de.uni_kl.cs.discodnc.curves.ArrivalCurve;
 import de.uni_kl.cs.discodnc.curves.Curve;
 import de.uni_kl.cs.discodnc.curves.MaxServiceCurve;
 import de.uni_kl.cs.discodnc.curves.ServiceCurve;
-import de.uni_kl.cs.discodnc.curves.mpartc.pwaffine.Curve_MPARTC_PwAffine;
+import de.uni_kl.cs.discodnc.curves.mpa_rtc.pw_affine.Curve_MPARTC_PwAffine;
 
 public enum MinPlus_MPARTC implements MinPlus {
 	MINPLUS_MPARTC;
