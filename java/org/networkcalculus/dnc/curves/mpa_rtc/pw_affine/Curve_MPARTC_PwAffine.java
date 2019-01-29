@@ -1,15 +1,13 @@
 /*
- * This file is part of the Disco Deterministic Network Calculator.
+ * This file is part of the Deterministic Network Calculator (DNC).
  *
- * Copyright (C) 2017+ The DiscoDNC contributors
+ * Copyright (C) 2017 - 2018 The DiscoDNC contributors
+ * Copyright (C) 2019+ The DNC contributors
  *
- * disco | Distributed Computer Systems Lab
- * University of Kaiserslautern, Germany
- *
- * http://discodnc.cs.uni-kl.de
+ * http://networkcalculus.org
  *
  *
- * The Disco Deterministic Network Calculator (DiscoDNC) is free software;
+ * The Deterministic Network Calculator (DNC) is free software;
  * you can redistribute it and/or modify it under the terms of the 
  * GNU Lesser General Public License as published by the Free Software Foundation; 
  * either version 2.1 of the License, or (at your option) any later version.
@@ -25,21 +23,21 @@
  *
  */
 
-package de.uni_kl.cs.discodnc.curves.mpa_rtc.pw_affine;
+package org.networkcalculus.dnc.curves.mpa_rtc.pw_affine;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.networkcalculus.dnc.Calculator;
+import org.networkcalculus.dnc.curves.Curve_Affine;
+import org.networkcalculus.dnc.curves.Curve_PwAffine;
+import org.networkcalculus.dnc.curves.LinearSegment;
+import org.networkcalculus.dnc.numbers.Num;
+
 import ch.ethz.rtc.kernel.Curve;
 import ch.ethz.rtc.kernel.Segment;
 import ch.ethz.rtc.kernel.SegmentList;
-
-import de.uni_kl.cs.discodnc.Calculator;
-import de.uni_kl.cs.discodnc.curves.Curve_Affine;
-import de.uni_kl.cs.discodnc.curves.Curve_PwAffine;
-import de.uni_kl.cs.discodnc.curves.LinearSegment;
-import de.uni_kl.cs.discodnc.numbers.Num;
 
 public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 	private static Curve_MPARTC_PwAffine instance = new Curve_MPARTC_PwAffine();
@@ -67,7 +65,7 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 	// Constructors
 	// --------------------------------------------------------------------------------------------------------------
 
-	protected Curve_MPARTC_PwAffine(de.uni_kl.cs.discodnc.curves.Curve curve) {
+	protected Curve_MPARTC_PwAffine(org.networkcalculus.dnc.curves.Curve curve) {
 		copy(curve);
 	}
 
@@ -196,7 +194,7 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 	}
 
 	@Override
-	public void copy(de.uni_kl.cs.discodnc.curves.Curve curve) {
+	public void copy(org.networkcalculus.dnc.curves.Curve curve) {
 		if (curve instanceof Curve_MPARTC_PwAffine) {
 			this.rtc_curve = ((Curve_MPARTC_PwAffine) curve).rtc_curve.clone();
 
@@ -527,7 +525,7 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 	}
 
 	@Override
-	public void setRL_Components(List<de.uni_kl.cs.discodnc.curves.Curve> rate_latencies) {
+	public void setRL_Components(List<org.networkcalculus.dnc.curves.Curve> rate_latencies) {
 		List<Curve_MPARTC_PwAffine> tmp = new LinkedList<>();
 		for (int i = 0; i < rate_latencies.size(); i++) {
 			tmp.add((Curve_MPARTC_PwAffine) rate_latencies.get(i));
@@ -545,7 +543,7 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 	}
 
 	@Override
-	public void setTB_Components(List<de.uni_kl.cs.discodnc.curves.Curve> token_buckets) {
+	public void setTB_Components(List<org.networkcalculus.dnc.curves.Curve> token_buckets) {
 		List<Curve_MPARTC_PwAffine> tmp = new LinkedList<>();
 		for (int i = 0; i < token_buckets.size(); i++) {
 			tmp.add((Curve_MPARTC_PwAffine) token_buckets.get(i));
@@ -757,7 +755,7 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 		return new ServiceCurve_MPARTC_PwAffine(service_curve_str);
 	}
 
-	public ServiceCurve_MPARTC_PwAffine createServiceCurve(de.uni_kl.cs.discodnc.curves.Curve curve) {
+	public ServiceCurve_MPARTC_PwAffine createServiceCurve(org.networkcalculus.dnc.curves.Curve curve) {
 		return new ServiceCurve_MPARTC_PwAffine(curve);
 	}
 
@@ -815,12 +813,12 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 		return new ArrivalCurve_MPARTC_PwAffine(arrival_curve_str);
 	}
 
-	public ArrivalCurve_MPARTC_PwAffine createArrivalCurve(de.uni_kl.cs.discodnc.curves.Curve curve) {
+	public ArrivalCurve_MPARTC_PwAffine createArrivalCurve(org.networkcalculus.dnc.curves.Curve curve) {
 		return new ArrivalCurve_MPARTC_PwAffine(curve);
 	}
 
-	public ArrivalCurve_MPARTC_PwAffine createArrivalCurve(de.uni_kl.cs.discodnc.curves.Curve curve, boolean remove_latency) {
-		return createArrivalCurve(de.uni_kl.cs.discodnc.curves.Curve.removeLatency(curve));
+	public ArrivalCurve_MPARTC_PwAffine createArrivalCurve(org.networkcalculus.dnc.curves.Curve curve, boolean remove_latency) {
+		return createArrivalCurve(org.networkcalculus.dnc.curves.Curve.removeLatency(curve));
 	}
 
 	public ArrivalCurve_MPARTC_PwAffine createZeroArrivals() {
@@ -872,7 +870,7 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 		return new MaxServiceCurve_MPARTC_PwAffine(max_service_curve_str);
 	}
 
-	public MaxServiceCurve_MPARTC_PwAffine createMaxServiceCurve(de.uni_kl.cs.discodnc.curves.Curve curve) {
+	public MaxServiceCurve_MPARTC_PwAffine createMaxServiceCurve(org.networkcalculus.dnc.curves.Curve curve) {
 		return new MaxServiceCurve_MPARTC_PwAffine(curve);
 	}
 

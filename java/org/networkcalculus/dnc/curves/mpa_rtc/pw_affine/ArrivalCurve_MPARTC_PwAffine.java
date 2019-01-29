@@ -1,15 +1,13 @@
 /*
- * This file is part of the Disco Deterministic Network Calculator.
+ * This file is part of the Deterministic Network Calculator (DNC).
  *
- * Copyright (C) 2017+ The DiscoDNC contributors
+ * Copyright (C) 2017 - 2018 The DiscoDNC contributors
+ * Copyright (C) 2019+ The DNC contributors
  *
- * disco | Distributed Computer Systems Lab
- * University of Kaiserslautern, Germany
- *
- * http://discodnc.cs.uni-kl.de
+ * http://networkcalculus.org
  *
  *
- * The Disco Deterministic Network Calculator (DiscoDNC) is free software;
+ * The Deterministic Network Calculator (DNC) is free software;
  * you can redistribute it and/or modify it under the terms of the 
  * GNU Lesser General Public License as published by the Free Software Foundation; 
  * either version 2.1 of the License, or (at your option) any later version.
@@ -25,12 +23,12 @@
  *
  */
 
-package de.uni_kl.cs.discodnc.curves.mpa_rtc.pw_affine;
+package org.networkcalculus.dnc.curves.mpa_rtc.pw_affine;
+
+import org.networkcalculus.dnc.curves.ArrivalCurve;
 
 import ch.ethz.rtc.kernel.Curve;
 import ch.ethz.rtc.kernel.SegmentList;
-
-import de.uni_kl.cs.discodnc.curves.ArrivalCurve;
 
 public class ArrivalCurve_MPARTC_PwAffine extends Curve_MPARTC_PwAffine implements ArrivalCurve {
     // --------------------------------------------------------------------------------------------------------------
@@ -44,7 +42,7 @@ public class ArrivalCurve_MPARTC_PwAffine extends Curve_MPARTC_PwAffine implemen
         super(segment_count);
     }
 
-    public ArrivalCurve_MPARTC_PwAffine(de.uni_kl.cs.discodnc.curves.Curve curve) {
+    public ArrivalCurve_MPARTC_PwAffine(org.networkcalculus.dnc.curves.Curve curve) {
         super(curve);
     }
 

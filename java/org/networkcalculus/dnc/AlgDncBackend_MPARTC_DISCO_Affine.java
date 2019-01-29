@@ -1,15 +1,13 @@
 /*
- * This file is part of the Disco Deterministic Network Calculator.
+ * This file is part of the Deterministic Network Calculator (DNC).
  *
- * Copyright (C) 2017+ The DiscoDNC contributors
+ * Copyright (C) 2017 - 2018 The DiscoDNC contributors
+ * Copyright (C) 2019+ The DNC contributors
  *
- * disco | Distributed Computer Systems Lab
- * University of Kaiserslautern, Germany
- *
- * http://discodnc.cs.uni-kl.de
+ * http://networkcalculus.org
  *
  *
- * The Disco Deterministic Network Calculator (DiscoDNC) is free software;
+ * The Deterministic Network Calculator (DNC) is free software;
  * you can redistribute it and/or modify it under the terms of the 
  * GNU Lesser General Public License as published by the Free Software Foundation; 
  * either version 2.1 of the License, or (at your option) any later version.
@@ -25,17 +23,17 @@
  *
  */
 
- package de.uni_kl.cs.discodnc;
+ package org.networkcalculus.dnc;
 
 import java.io.File;
 
-import de.uni_kl.cs.discodnc.AlgDncBackend;
-import de.uni_kl.cs.discodnc.algebra.MinPlus;
-import de.uni_kl.cs.discodnc.algebra.disco.affine.MinPlus_Disco_Affine;
-import de.uni_kl.cs.discodnc.curves.Curve_PwAffine;
-import de.uni_kl.cs.discodnc.curves.LinearSegment;
-import de.uni_kl.cs.discodnc.curves.mpa_rtc.pw_affine.Curve_MPARTC_PwAffine;
-import de.uni_kl.cs.discodnc.curves.mpa_rtc.pw_affine.LinearSegment_MPARTC_PwAffine;
+import org.networkcalculus.dnc.AlgDncBackend;
+import org.networkcalculus.dnc.algebra.MinPlus;
+import org.networkcalculus.dnc.algebra.disco.affine.MinPlus_Disco_Affine;
+import org.networkcalculus.dnc.curves.Curve_PwAffine;
+import org.networkcalculus.dnc.curves.LinearSegment;
+import org.networkcalculus.dnc.curves.mpa_rtc.pw_affine.Curve_MPARTC_PwAffine;
+import org.networkcalculus.dnc.curves.mpa_rtc.pw_affine.LinearSegment_MPARTC_PwAffine;
 
 public enum AlgDncBackend_MPARTC_DISCO_Affine implements AlgDncBackend {
 	MPARTC_PWAFFINEC_DISCO_AFFINEMP;

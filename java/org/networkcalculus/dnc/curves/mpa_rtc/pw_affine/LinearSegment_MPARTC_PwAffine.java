@@ -1,15 +1,13 @@
 /*
- * This file is part of the Disco Deterministic Network Calculator.
+ * This file is part of the Deterministic Network Calculator (DNC).
  *
- * Copyright (C) 2017+ The DiscoDNC contributors
+ * Copyright (C) 2017 - 2018 The DiscoDNC contributors
+ * Copyright (C) 2019+ The DNC contributors
  *
- * disco | Distributed Computer Systems Lab
- * University of Kaiserslautern, Germany
- *
- * http://discodnc.cs.uni-kl.de
+ * http://networkcalculus.org
  *
  *
- * The Disco Deterministic Network Calculator (DiscoDNC) is free software;
+ * The Deterministic Network Calculator (DNC) is free software;
  * you can redistribute it and/or modify it under the terms of the 
  * GNU Lesser General Public License as published by the Free Software Foundation; 
  * either version 2.1 of the License, or (at your option) any later version.
@@ -25,13 +23,14 @@
  *
  */
 
-package de.uni_kl.cs.discodnc.curves.mpa_rtc.pw_affine;
+package org.networkcalculus.dnc.curves.mpa_rtc.pw_affine;
+
+import org.networkcalculus.dnc.Calculator;
+import org.networkcalculus.dnc.curves.LinearSegment;
+import org.networkcalculus.dnc.curves.mpa_rtc.pw_affine.LinearSegment_MPARTC_PwAffine;
+import org.networkcalculus.dnc.numbers.Num;
 
 import ch.ethz.rtc.kernel.Segment;
-
-import de.uni_kl.cs.discodnc.Calculator;
-import de.uni_kl.cs.discodnc.curves.LinearSegment;
-import de.uni_kl.cs.discodnc.numbers.Num;
 
 public class LinearSegment_MPARTC_PwAffine implements LinearSegment {
 
