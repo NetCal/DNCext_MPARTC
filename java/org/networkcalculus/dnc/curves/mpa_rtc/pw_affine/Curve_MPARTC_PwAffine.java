@@ -33,7 +33,7 @@ import org.networkcalculus.dnc.Calculator;
 import org.networkcalculus.dnc.curves.Curve_Affine;
 import org.networkcalculus.dnc.curves.Curve_PwAffine;
 import org.networkcalculus.dnc.curves.LinearSegment;
-import org.networkcalculus.dnc.numbers.Num;
+import org.networkcalculus.num.Num;
 
 import ch.ethz.rtc.kernel.Curve;
 import ch.ethz.rtc.kernel.Segment;

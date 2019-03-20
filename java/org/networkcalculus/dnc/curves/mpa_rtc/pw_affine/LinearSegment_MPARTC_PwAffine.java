@@ -28,7 +28,7 @@ package org.networkcalculus.dnc.curves.mpa_rtc.pw_affine;
 import org.networkcalculus.dnc.Calculator;
 import org.networkcalculus.dnc.curves.LinearSegment;
 import org.networkcalculus.dnc.curves.mpa_rtc.pw_affine.LinearSegment_MPARTC_PwAffine;
-import org.networkcalculus.dnc.numbers.Num;
+import org.networkcalculus.num.Num;
 
 import ch.ethz.rtc.kernel.Segment;
 
