@@ -26,6 +26,7 @@
 package org.networkcalculus.dnc.algebra.mpa_rtc.pw_affine;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 import org.networkcalculus.dnc.Calculator;
@@ -37,8 +38,6 @@ import org.networkcalculus.dnc.curves.ServiceCurve;
 import org.networkcalculus.dnc.curves.mpa_rtc.pw_affine.Curve_MPARTC_PwAffine;
 
 import ch.ethz.rtc.kernel.CurveMath;
-import ch.ethz.rtc.kernel.Segment;
-import ch.ethz.rtc.kernel.SegmentList;
 
 public enum MinPlus_MPARTC implements MinPlus {
 	MINPLUS_MPARTC;
@@ -66,9 +65,6 @@ public enum MinPlus_MPARTC implements MinPlus {
 		return Calculator.getInstance().getCurveFactory().createServiceCurve(result.toString());
 	}
 
-	// Java won't let us call this method "convolve" because it does not care about
-	// the Sets' types; tells that there's already another method taking the same
-	// arguments.
 	public Set<ServiceCurve> convolve(Set<ServiceCurve> service_curves_1, Set<ServiceCurve> service_curves_2)
 			throws Exception {
 		return convolve_SCs_SCs(service_curves_1, service_curves_2, false);
@@ -112,27 +108,24 @@ public enum MinPlus_MPARTC implements MinPlus {
 	public ArrivalCurve convolve(Set<ArrivalCurve> arrival_curves) throws Exception {
 		// DNC operations work with DNC and MPA_RTC curves
 
-		// TODO Double check
 		if (arrival_curves == null || arrival_curves.isEmpty()) {
 			return Calculator.getInstance().getCurveFactory().createZeroArrivals();
 		}
-		if (arrival_curves.size() == 1) {
-			return arrival_curves.iterator().next().copy();
+		
+		Iterator<ArrivalCurve> ac_iter = arrival_curves.iterator();
+		ArrivalCurve curve1 = ac_iter.next();
+		
+		if (!ac_iter.hasNext()) {
+			return curve1.copy();
 		}
-		Segment s = new Segment(0, 0, 0);
-		SegmentList sl = new SegmentList();
-		sl.add(s);
-		ch.ethz.rtc.kernel.Curve result = new ch.ethz.rtc.kernel.Curve(sl);
-		ch.ethz.rtc.kernel.Curve ac2 = null;
-		for (ArrivalCurve arrival_curve_2 : arrival_curves) {
-			ArrivalCurve result_curves = Calculator.getInstance().getCurveFactory().createArrivalCurve(arrival_curve_2.toString());
-			Curve_MPARTC_PwAffine c = (Curve_MPARTC_PwAffine) result_curves;
-			ac2 = c.getRtc_curve();
-
-			result = CurveMath.minPlusConv(result, ac2);
+		
+		ArrivalCurve curve2;
+		while(ac_iter.hasNext()) {
+			curve2 = ac_iter.next();
+			curve1 = convolve(curve1, curve2);
 		}
-
-		return Calculator.getInstance().getCurveFactory().createArrivalCurve(ac2.toString());
+		
+		return curve1;
 	}
 
 	// Maximum Service Curves
