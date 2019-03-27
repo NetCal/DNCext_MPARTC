@@ -33,6 +33,7 @@ import org.networkcalculus.dnc.Calculator;
 import org.networkcalculus.dnc.curves.Curve_Affine;
 import org.networkcalculus.dnc.curves.Curve_PwAffine;
 import org.networkcalculus.dnc.curves.LinearSegment;
+import org.networkcalculus.dnc.curves.mpa_rtc.Curves_MPARTC_Configuration;
 import org.networkcalculus.num.Num;
 
 import ch.ethz.rtc.kernel.Curve;
@@ -613,7 +614,7 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 			return;
 		}
 
-		if (Calculator.getInstance().exec_service_curve_checks() && !this.isConvex()) {
+		if (Curves_MPARTC_Configuration.getInstance().exec_service_curve_checks() && !this.isConvex()) {
 			if (this.equals(this.createZeroDelayInfiniteBurst())) {
 				rate_latencies = new ArrayList<Curve_MPARTC_PwAffine>();
 				rate_latencies.add(this.createRateLatency(Num.getFactory(Calculator.getInstance().getNumBackend()).createPositiveInfinity(),
@@ -668,7 +669,7 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 			// return;
 		}
 
-		if (Calculator.getInstance().exec_arrival_curve_checks() && !this.isConcave()) {
+		if (Curves_MPARTC_Configuration.getInstance().exec_arrival_curve_checks() && !this.isConcave()) {
 			throw new RuntimeException("Can only decompose concave arrival curves into token buckets.");
 		}
 

@@ -29,7 +29,7 @@ import java.io.File;
 
 import org.networkcalculus.dnc.AlgDncBackend;
 import org.networkcalculus.dnc.algebra.MinPlus;
-import org.networkcalculus.dnc.algebra.disco.con_pw_affine.MinPlus_Disco_ConPwAffine;
+import org.networkcalculus.dnc.algebra.disco.MinPlus_Disco_ConPwAffine;
 import org.networkcalculus.dnc.curves.Curve_PwAffine;
 import org.networkcalculus.dnc.curves.LinearSegment;
 import org.networkcalculus.dnc.curves.mpa_rtc.pw_affine.Curve_MPARTC_PwAffine;
