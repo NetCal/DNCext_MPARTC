@@ -39,6 +39,17 @@ import org.networkcalculus.dnc.curves.mpa_rtc.pw_affine.Curve_MPARTC_PwAffine;
 
 import ch.ethz.rtc.kernel.CurveMath;
 
+/**
+ * A dispatcher calling the MPA RTC's implementation of min-plus convolution and deconvolution.
+ * 
+ * For compatibility with the NetCal DNC, this class implements all the methods defined in the MinPlus interface.
+ * 
+ * Dispatching simply works follows:
+ * Given MPA RTC curves that are wrapped to comply with the DNC Curve interfaces,
+ * the respective method unwraps them, 
+ * applies the according MPA RTC operation and 
+ * wraps the result for DNC compliance.
+ */
 public enum MinPlus_MPARTC implements MinPlus {
 	MINPLUS_MPARTC;
 	
@@ -246,5 +257,4 @@ public enum MinPlus_MPARTC implements MinPlus {
 		}
 		return results;
 	}
-
 }
