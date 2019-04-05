@@ -4,7 +4,7 @@ Deterministic Network Calculus is a methodology for worst-case modeling and anal
 
 ## Usage
 
-These experiments depend on the code restructuring of the DNC v2.5.0.
+This extension depends on the code restructuring of the DNC v2.5.0.
 
 ## MPA RTC Curve Backend
 
