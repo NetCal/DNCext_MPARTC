@@ -46,6 +46,10 @@ public class ArrivalCurve_MPARTC_PwAffine extends Curve_MPARTC_PwAffine implemen
         super(curve);
     }
 
+    public ArrivalCurve_MPARTC_PwAffine(ch.ethz.rtc.kernel.Curve curve) {
+        rtc_curve = curve.clone();
+    }
+
     public ArrivalCurve_MPARTC_PwAffine(String arrival_curve_str) throws Exception {
         super.initializeCurve(arrival_curve_str);
     }
@@ -56,10 +60,6 @@ public class ArrivalCurve_MPARTC_PwAffine extends Curve_MPARTC_PwAffine implemen
 
     public ArrivalCurve_MPARTC_PwAffine(SegmentList perSegments, double py0, long period, double pdy) {
         rtc_curve = new Curve(perSegments, py0, period, pdy);
-    }
-
-    public ArrivalCurve_MPARTC_PwAffine(Curve c) {
-        rtc_curve = c.clone();
     }
 
     public ArrivalCurve_MPARTC_PwAffine(SegmentList perSegments, double py0, long period, double pdy,

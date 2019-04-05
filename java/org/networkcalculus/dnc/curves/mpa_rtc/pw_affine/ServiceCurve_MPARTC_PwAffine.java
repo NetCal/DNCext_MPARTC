@@ -48,6 +48,10 @@ public class ServiceCurve_MPARTC_PwAffine extends Curve_MPARTC_PwAffine implemen
         copy(curve);
     }
 
+    public ServiceCurve_MPARTC_PwAffine(ch.ethz.rtc.kernel.Curve curve) {
+        rtc_curve = curve.clone();
+    }
+
     public ServiceCurve_MPARTC_PwAffine(String service_curve_str) throws Exception {
         super.initializeCurve(service_curve_str);
     }
@@ -76,10 +80,6 @@ public class ServiceCurve_MPARTC_PwAffine extends Curve_MPARTC_PwAffine implemen
 
     public ServiceCurve_MPARTC_PwAffine(SegmentList aperSegments, String name) {
         rtc_curve = new Curve(aperSegments, name);
-    }
-
-    public ServiceCurve_MPARTC_PwAffine(Curve c) {
-        rtc_curve = c.clone();
     }
 
     // --------------------------------------------------------------------------------------------------------------

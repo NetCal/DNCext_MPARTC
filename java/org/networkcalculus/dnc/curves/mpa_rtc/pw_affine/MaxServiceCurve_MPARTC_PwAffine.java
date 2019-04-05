@@ -48,6 +48,10 @@ public class MaxServiceCurve_MPARTC_PwAffine extends Curve_MPARTC_PwAffine imple
         copy(curve);
     }
 
+    public MaxServiceCurve_MPARTC_PwAffine(ch.ethz.rtc.kernel.Curve curve) {
+        rtc_curve = curve.clone();
+    }
+
     public MaxServiceCurve_MPARTC_PwAffine(String max_service_curve_str) throws Exception {
         super.initializeCurve(max_service_curve_str);
     }
@@ -76,10 +80,6 @@ public class MaxServiceCurve_MPARTC_PwAffine extends Curve_MPARTC_PwAffine imple
 
     public MaxServiceCurve_MPARTC_PwAffine(SegmentList aperSegments, String name) {
         rtc_curve = new Curve(aperSegments, name);
-    }
-
-    public MaxServiceCurve_MPARTC_PwAffine(Curve c) {
-        rtc_curve = c.clone();
     }
 
     // --------------------------------------------------------------------------------------------------------------
