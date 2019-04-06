@@ -39,7 +39,7 @@ import org.networkcalculus.dnc.curves.LinearSegment;
 import org.networkcalculus.dnc.curves.mpa_rtc.LinearSegment_MPARTC;
 import org.networkcalculus.dnc.curves.mpa_rtc.pw_affine.Curve_MPARTC_PwAffine;
 
-public enum AlgDncBackend_MPARTC_DISCO_PwAffine implements AlgDncBackend {
+public enum AlgDncBackend_MPARTC_DISCO_ConPwAffine implements AlgDncBackend {
 	MPARTC_PWAFFINEC_DISCO_CONPWAFFINEMP;
 
 	@Override
