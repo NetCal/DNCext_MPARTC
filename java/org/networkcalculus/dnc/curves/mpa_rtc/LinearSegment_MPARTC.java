@@ -23,40 +23,40 @@
  *
  */
 
-package org.networkcalculus.dnc.curves.mpa_rtc.pw_affine;
+package org.networkcalculus.dnc.curves.mpa_rtc;
 
 import org.networkcalculus.dnc.Calculator;
 import org.networkcalculus.dnc.curves.LinearSegment;
-import org.networkcalculus.dnc.curves.mpa_rtc.pw_affine.LinearSegment_MPARTC_PwAffine;
+import org.networkcalculus.dnc.curves.mpa_rtc.LinearSegment_MPARTC;
 import org.networkcalculus.num.Num;
 
 import ch.ethz.rtc.kernel.Segment;
 
-public class LinearSegment_MPARTC_PwAffine implements LinearSegment {
+public class LinearSegment_MPARTC implements LinearSegment {
 
 	private ch.ethz.rtc.kernel.Segment rtc_segment;
 
 	// --------------------------------------------------------------------------------------------------------------
 	// Constructors
 	// --------------------------------------------------------------------------------------------------------------
-	public LinearSegment_MPARTC_PwAffine(double x, double y, double s) {
+	public LinearSegment_MPARTC(double x, double y, double s) {
 		rtc_segment = new Segment(x, y, s);
 	}
 
-	public LinearSegment_MPARTC_PwAffine(LinearSegment segment) {
-		if (segment instanceof LinearSegment_MPARTC_PwAffine) {
-			rtc_segment = ((LinearSegment_MPARTC_PwAffine) segment).rtc_segment.clone();
+	public LinearSegment_MPARTC(LinearSegment segment) {
+		if (segment instanceof LinearSegment_MPARTC) {
+			rtc_segment = ((LinearSegment_MPARTC) segment).rtc_segment.clone();
 		} else {
 			rtc_segment = new Segment(segment.getX().doubleValue(), segment.getY().doubleValue(),
 					segment.getGrad().doubleValue());
 		}
 	}
 
-	public LinearSegment_MPARTC_PwAffine(Segment segment) {
+	public LinearSegment_MPARTC(Segment segment) {
 		rtc_segment = segment.clone();
 	}
 
-	public LinearSegment_MPARTC_PwAffine(String segment_str) {
+	public LinearSegment_MPARTC(String segment_str) {
 		rtc_segment = new Segment(segment_str);
 	}
 
@@ -129,15 +129,15 @@ public class LinearSegment_MPARTC_PwAffine implements LinearSegment {
 
 	@Override
 	public LinearSegment copy() {
-		return new LinearSegment_MPARTC_PwAffine(rtc_segment);
+		return new LinearSegment_MPARTC(rtc_segment);
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		if (obj == null || !(obj instanceof LinearSegment_MPARTC_PwAffine)) {
+		if (obj == null || !(obj instanceof LinearSegment_MPARTC)) {
 			return false;
 		}
-		return rtc_segment.equals(((LinearSegment_MPARTC_PwAffine) obj).rtc_segment);
+		return rtc_segment.equals(((LinearSegment_MPARTC) obj).rtc_segment);
 	}
 
 	@Override
@@ -158,12 +158,12 @@ public class LinearSegment_MPARTC_PwAffine implements LinearSegment {
 
 		@Override
 		public LinearSegment createLinearSegment(Num x, Num y, Num grad, boolean leftopen) {
-			return new LinearSegment_MPARTC_PwAffine(x.doubleValue(), y.doubleValue(), grad.doubleValue());
+			return new LinearSegment_MPARTC(x.doubleValue(), y.doubleValue(), grad.doubleValue());
 		}
 
 		@Override
 		public LinearSegment createHorizontalLine(double y) {
-			return new LinearSegment_MPARTC_PwAffine(0.0, y, 0.0);
+			return new LinearSegment_MPARTC(0.0, y, 0.0);
 		}
 
 	}
