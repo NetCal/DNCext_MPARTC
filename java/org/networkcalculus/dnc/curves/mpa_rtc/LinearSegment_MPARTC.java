@@ -61,7 +61,7 @@ public class LinearSegment_MPARTC implements LinearSegment {
 	}
 
 	// Setter in order to prevent copy bug
-	protected void setRtc_segment(Segment rtc_segment) {
+	public void setRtc_segment(Segment rtc_segment) {
 		this.rtc_segment = rtc_segment;
 	}
 
