@@ -32,7 +32,7 @@ import org.networkcalculus.dnc.algebra.mpa_rtc.MinPlus_MPARTC_PwAffine;
 import org.networkcalculus.dnc.bounds.BoundingCurves;
 import org.networkcalculus.dnc.bounds.Bounds;
 import org.networkcalculus.dnc.bounds.disco.BoundingCurves_Disco_ConPwAffine;
-import org.networkcalculus.dnc.bounds.disco.Bounds_Disco_PwAffine;
+import org.networkcalculus.dnc.bounds.mpa_rtc.Bounds_MPARTC_PwAffine;
 import org.networkcalculus.dnc.curves.Curve_PwAffine;
 import org.networkcalculus.dnc.curves.LinearSegment;
 import org.networkcalculus.dnc.curves.mpa_rtc.LinearSegment_MPARTC;
@@ -55,13 +55,9 @@ public enum AlgDncBackend_MPARTC_PwAffine implements AlgDncBackend {
 		return BoundingCurves_Disco_ConPwAffine.BOUNDINGCURVES_DISCO_CONPWAFFINE;
 	}
 
-	/**
-	 * See Github issue #15: Dispatch to Native Bounding Methods
-	 * https://github.com/NetCal/DNCext_MPARTC/issues/15
-	 */
 	@Override
 	public Bounds getBounds() {
-		return Bounds_Disco_PwAffine.BOUNDS_DISCO_PWAFFINE;
+		return Bounds_MPARTC_PwAffine.BOUNDS_MPARTC_PWAFFINE;
 	}
 
 	@Override
