@@ -28,7 +28,7 @@ package org.networkcalculus.dnc;
 import java.io.File;
 
 import org.networkcalculus.dnc.algebra.MinPlus;
-import org.networkcalculus.dnc.algebra.mpa_rtc.pw_affine.MinPlus_MPARTC;
+import org.networkcalculus.dnc.algebra.mpa_rtc.MinPlus_MPARTC_PwAffine;
 import org.networkcalculus.dnc.bounds.BoundingCurves;
 import org.networkcalculus.dnc.bounds.Bounds;
 import org.networkcalculus.dnc.bounds.disco.BoundingCurves_Disco_ConPwAffine;
@@ -43,7 +43,7 @@ public enum AlgDncBackend_MPARTC_PwAffine implements AlgDncBackend {
 
 	@Override
 	public MinPlus getMinPlus() {
-		return MinPlus_MPARTC.MINPLUS_MPARTC;
+		return MinPlus_MPARTC_PwAffine.MINPLUS_MPARTC;
 	}
 
 	/**
