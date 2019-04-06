@@ -23,7 +23,7 @@
  *
  */
 
-package org.networkcalculus.dnc.algebra.mpa_rtc.pw_affine;
+package org.networkcalculus.dnc.algebra.mpa_rtc;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -52,7 +52,7 @@ import ch.ethz.rtc.kernel.CurveMath;
  * applies the according MPA RTC operation and 
  * wraps the result for DNC compliance.
  */
-public enum MinPlus_MPARTC implements MinPlus {
+public enum MinPlus_MPARTC_PwAffine implements MinPlus {
 	MINPLUS_MPARTC;
 	
 	// --------------------------------------------------------------------------------------------------------------
