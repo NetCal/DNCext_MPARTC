@@ -28,18 +28,36 @@ package org.networkcalculus.dnc;
 import java.io.File;
 
 import org.networkcalculus.dnc.algebra.MinPlus;
-import org.networkcalculus.dnc.algebra.mpa_rtc.pw_affine.MinPlus_MPARTC;
+import org.networkcalculus.dnc.algebra.mpa_rtc.MinPlus_MPARTC_PwAffine;
+import org.networkcalculus.dnc.bounds.BoundingCurves;
+import org.networkcalculus.dnc.bounds.Bounds;
+import org.networkcalculus.dnc.bounds.disco.BoundingCurves_Disco_ConPwAffine;
+import org.networkcalculus.dnc.bounds.mpa_rtc.Bounds_MPARTC_PwAffine;
 import org.networkcalculus.dnc.curves.Curve_PwAffine;
 import org.networkcalculus.dnc.curves.LinearSegment;
+import org.networkcalculus.dnc.curves.mpa_rtc.LinearSegment_MPARTC;
 import org.networkcalculus.dnc.curves.mpa_rtc.pw_affine.Curve_MPARTC_PwAffine;
-import org.networkcalculus.dnc.curves.mpa_rtc.pw_affine.LinearSegment_MPARTC_PwAffine;
 
 public enum AlgDncBackend_MPARTC_PwAffine implements AlgDncBackend {
 	MPARTC_PWAFFINE;
 
 	@Override
 	public MinPlus getMinPlus() {
-		return MinPlus_MPARTC.MINPLUS_MPARTC;
+		return MinPlus_MPARTC_PwAffine.MINPLUS_MPARTC;
+	}
+
+	/**
+	 * See Github issue #15: Dispatch to Native Bounding Methods
+	 * https://github.com/NetCal/DNCext_MPARTC/issues/15
+	 */
+	@Override
+	public BoundingCurves getBoundingCurves() {
+		return BoundingCurves_Disco_ConPwAffine.BOUNDINGCURVES_DISCO_CONPWAFFINE;
+	}
+
+	@Override
+	public Bounds getBounds() {
+		return Bounds_MPARTC_PwAffine.BOUNDS_MPARTC_PWAFFINE;
 	}
 
 	@Override
@@ -60,6 +78,6 @@ public enum AlgDncBackend_MPARTC_PwAffine implements AlgDncBackend {
 	
 	@Override
 	public LinearSegment.Builder getLinearSegmentFactory() {
-		return LinearSegment_MPARTC_PwAffine.getBuilder();
+		return LinearSegment_MPARTC.getBuilder();
 	}
 }

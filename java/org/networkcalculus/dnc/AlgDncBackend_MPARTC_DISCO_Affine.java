@@ -30,10 +30,14 @@ import java.io.File;
 import org.networkcalculus.dnc.AlgDncBackend;
 import org.networkcalculus.dnc.algebra.MinPlus;
 import org.networkcalculus.dnc.algebra.disco.MinPlus_Disco_Affine;
+import org.networkcalculus.dnc.bounds.BoundingCurves;
+import org.networkcalculus.dnc.bounds.Bounds;
+import org.networkcalculus.dnc.bounds.disco.BoundingCurves_Disco_ConPwAffine;
+import org.networkcalculus.dnc.bounds.disco.Bounds_Disco_PwAffine;
 import org.networkcalculus.dnc.curves.Curve_PwAffine;
 import org.networkcalculus.dnc.curves.LinearSegment;
+import org.networkcalculus.dnc.curves.mpa_rtc.LinearSegment_MPARTC;
 import org.networkcalculus.dnc.curves.mpa_rtc.pw_affine.Curve_MPARTC_PwAffine;
-import org.networkcalculus.dnc.curves.mpa_rtc.pw_affine.LinearSegment_MPARTC_PwAffine;
 
 public enum AlgDncBackend_MPARTC_DISCO_Affine implements AlgDncBackend {
 	MPARTC_PWAFFINEC_DISCO_AFFINEMP;
@@ -41,6 +45,16 @@ public enum AlgDncBackend_MPARTC_DISCO_Affine implements AlgDncBackend {
 	@Override
 	public MinPlus getMinPlus() {
 		return MinPlus_Disco_Affine.MINPLUS_DISCO_AFFINE;
+	}
+
+	@Override
+	public BoundingCurves getBoundingCurves() {
+		return BoundingCurves_Disco_ConPwAffine.BOUNDINGCURVES_DISCO_CONPWAFFINE;
+	}
+
+	@Override
+	public Bounds getBounds() {
+		return Bounds_Disco_PwAffine.BOUNDS_DISCO_PWAFFINE;
 	}
 
 	@Override
@@ -61,7 +75,7 @@ public enum AlgDncBackend_MPARTC_DISCO_Affine implements AlgDncBackend {
 	
 	@Override
 	public LinearSegment.Builder getLinearSegmentFactory() {
-		return LinearSegment_MPARTC_PwAffine.getBuilder();
+		return LinearSegment_MPARTC.getBuilder();
 	}
 
     @Override

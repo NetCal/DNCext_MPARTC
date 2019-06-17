@@ -34,6 +34,7 @@ import org.networkcalculus.dnc.curves.Curve_Affine;
 import org.networkcalculus.dnc.curves.Curve_PwAffine;
 import org.networkcalculus.dnc.curves.LinearSegment;
 import org.networkcalculus.dnc.curves.mpa_rtc.Curves_MPARTC_Configuration;
+import org.networkcalculus.dnc.curves.mpa_rtc.LinearSegment_MPARTC;
 import org.networkcalculus.num.Num;
 
 import ch.ethz.rtc.kernel.Curve;
@@ -236,8 +237,8 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 	/**
 	 * Starting at 0 as the RTC SegmentList extends ArrayList.
 	 */
-	public LinearSegment_MPARTC_PwAffine getSegment(int pos) {
-		LinearSegment_MPARTC_PwAffine s = new LinearSegment_MPARTC_PwAffine(0, 0, 0);
+	public LinearSegment_MPARTC getSegment(int pos) {
+		LinearSegment_MPARTC s = new LinearSegment_MPARTC(0, 0, 0);
 		s.setRtc_segment(rtc_curve.aperiodicSegments().get(pos));
 		return s;
 	}
