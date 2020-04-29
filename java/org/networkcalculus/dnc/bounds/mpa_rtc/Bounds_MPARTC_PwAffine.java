@@ -63,7 +63,7 @@ public enum Bounds_MPARTC_PwAffine implements Bounds {
      *       a restriction inherited from the DISCO implementation. 
      */
     public Num delayARB(ArrivalCurve arrival_curve, ServiceCurve service_curve) {
-    	return Curve.getXIntersection(arrival_curve,service_curve);
+    	return Curve.getUtils().getXIntersection(arrival_curve,service_curve);
     }
 
     public Num delayFIFO(ArrivalCurve arrival_curve, ServiceCurve service_curve) {

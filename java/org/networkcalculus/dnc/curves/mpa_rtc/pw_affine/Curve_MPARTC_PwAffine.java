@@ -820,7 +820,7 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 	}
 
 	public ArrivalCurve_MPARTC_PwAffine createArrivalCurve(org.networkcalculus.dnc.curves.Curve curve, boolean remove_latency) {
-		return createArrivalCurve(org.networkcalculus.dnc.curves.Curve.removeLatency(curve));
+		return createArrivalCurve(org.networkcalculus.dnc.curves.Curve.getUtils().removeLatency(curve));
 	}
 
 	public ArrivalCurve_MPARTC_PwAffine createZeroArrivals() {
