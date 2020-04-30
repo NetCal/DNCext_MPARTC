@@ -35,16 +35,15 @@ import org.networkcalculus.dnc.curves.Curve_PwAffine;
 import org.networkcalculus.dnc.curves.LinearSegment;
 import org.networkcalculus.dnc.curves.mpa_rtc.Curves_MPARTC_Configuration;
 import org.networkcalculus.dnc.curves.mpa_rtc.LinearSegment_MPARTC;
+import org.networkcalculus.dnc.curves.mpa_rtc.MPARTC_Curve_Wrapper;
 import org.networkcalculus.num.Num;
 
 import ch.ethz.rtc.kernel.Curve;
 import ch.ethz.rtc.kernel.Segment;
 import ch.ethz.rtc.kernel.SegmentList;
 
-public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
+public class Curve_MPARTC_PwAffine extends MPARTC_Curve_Wrapper implements Curve_PwAffine {
 	private static Curve_MPARTC_PwAffine instance = new Curve_MPARTC_PwAffine();
-
-	protected ch.ethz.rtc.kernel.Curve rtc_curve;
 
 	protected boolean is_delayed_infinite_burst = false;
 	protected boolean is_rate_latency = false;
@@ -101,10 +100,6 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 			segList_rtc.add(new Segment((double) i, (double) i, 0));
 		}
 		rtc_curve = new Curve(segList_rtc);
-	}
-
-	public Curve getRtc_curve() {
-		return rtc_curve;
 	}
 
 	// Accepts string representations of RTC as well as
