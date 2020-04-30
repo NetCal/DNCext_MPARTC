@@ -30,7 +30,6 @@ import org.networkcalculus.dnc.curves.mpa_rtc.pw_affine.Curve_MPARTC_PwAffine;
 import org.networkcalculus.dnc.curves.mpa_rtc.pw_affine.ServiceCurve_MPARTC_PwAffine;
 
 import ch.ethz.rtc.kernel.Curve;
-import ch.ethz.rtc.kernel.SegmentList;
 
 public class ServiceCurve_MPARTC_PwAffine extends Curve_MPARTC_PwAffine implements ServiceCurve {
     // --------------------------------------------------------------------------------------------------------------
@@ -48,38 +47,12 @@ public class ServiceCurve_MPARTC_PwAffine extends Curve_MPARTC_PwAffine implemen
         copy(curve);
     }
 
-    public ServiceCurve_MPARTC_PwAffine(ch.ethz.rtc.kernel.Curve curve) {
+    public ServiceCurve_MPARTC_PwAffine(Curve curve) {
         rtc_curve = curve.clone();
     }
 
     public ServiceCurve_MPARTC_PwAffine(String service_curve_str) throws Exception {
         super.initializeCurve(service_curve_str);
-    }
-
-    public ServiceCurve_MPARTC_PwAffine(SegmentList aperSegments) {
-        rtc_curve = new Curve(aperSegments);
-    }
-
-    public ServiceCurve_MPARTC_PwAffine(SegmentList perSegments, double py0, long period, double pdy) {
-        rtc_curve = new Curve(perSegments, py0, period, pdy);
-    }
-
-    public ServiceCurve_MPARTC_PwAffine(SegmentList perSegments, double py0, long period, double pdy, String name) {
-        rtc_curve = new Curve(perSegments, py0, period, pdy, name);
-    }
-
-    public ServiceCurve_MPARTC_PwAffine(SegmentList aperSegments, SegmentList perSegments, double px0, double py0,
-                                        long period, double pdy) {
-        rtc_curve = new Curve(aperSegments, perSegments, px0, py0, period, pdy);
-    }
-
-    public ServiceCurve_MPARTC_PwAffine(SegmentList aperSegments, SegmentList perSegments, double px0, double py0,
-                                        long period, double pdy, String name) {
-        rtc_curve = new Curve(aperSegments, perSegments, px0, py0, period, pdy, name);
-    }
-
-    public ServiceCurve_MPARTC_PwAffine(SegmentList aperSegments, String name) {
-        rtc_curve = new Curve(aperSegments, name);
     }
 
     // --------------------------------------------------------------------------------------------------------------
