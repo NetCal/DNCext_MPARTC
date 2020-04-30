@@ -56,7 +56,7 @@ public enum Bounds_MPARTC_PwAffine implements Bounds {
 
     /**
      * MPA RTC does not have an implementation for finding the x-coordinate of
-     * two curves' first intersection. We have to use the DISCO implementation,
+     * two curves' first intersection. We have to use the implementation by DISCO,
      * relying on the curve interface compliance of the MPA RTC curve wrapper.
      * 
      * TODO: This restricts the entire class to non-periodic curves,

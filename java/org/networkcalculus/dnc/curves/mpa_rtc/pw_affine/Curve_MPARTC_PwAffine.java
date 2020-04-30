@@ -91,8 +91,8 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 	// --------------------------------------------------------------------------------------------------------------
 
 	// Attention
-	// * Default behavior of the DiscoDNC cannot be reenacted with the RTC.
-	// * DiscoDNC initializes curves with overlapping (x,y,r)=(0,0,0) segments.
+	// * Default behavior of the DNC cannot be reenacted with the RTC.
+	// * DNC initializes curves with overlapping (x,y,r)=(0,0,0) segments.
 	// That causes an error with the RTC implementation.
 	// We initialize with (segment_number,segment_number,0) instead.
 	private void createZeroSegmentsCurve(int segment_count) {
@@ -702,7 +702,7 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 	// --------------------------------------------------------------------------------------------------------------
 
 	// ------------------------------------------------------------
-	// DiscoDNC compliance
+	// DNC compliance
 	// ------------------------------------------------------------
 	public Curve_MPARTC_PwAffine createCurve(List<LinearSegment> segments) {
 		Curve_MPARTC_PwAffine msc_rtc = new Curve_MPARTC_PwAffine();
@@ -743,7 +743,7 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 	// --------------------------------------------------------------------------------------------------------------
 
 	// ------------------------------------------------------------
-	// DiscoDNC compliance
+	// DNC compliance
 	// ------------------------------------------------------------
 	public ServiceCurve_MPARTC_PwAffine createServiceCurve() {
 		return new ServiceCurve_MPARTC_PwAffine();
@@ -801,7 +801,7 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 	// --------------------------------------------------------------------------------------------------------------
 
 	// ------------------------------------------------------------
-	// DiscoDNC compliance
+	// DNC compliance
 	// ------------------------------------------------------------
 	public ArrivalCurve_MPARTC_PwAffine createArrivalCurve() {
 		return new ArrivalCurve_MPARTC_PwAffine();
@@ -858,7 +858,7 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 	// --------------------------------------------------------------------------------------------------------------
 
 	// ------------------------------------------------------------
-	// DiscoDNC compliance
+	// DNC compliance
 	// ------------------------------------------------------------
 	public MaxServiceCurve_MPARTC_PwAffine createMaxServiceCurve() {
 		return new MaxServiceCurve_MPARTC_PwAffine();
