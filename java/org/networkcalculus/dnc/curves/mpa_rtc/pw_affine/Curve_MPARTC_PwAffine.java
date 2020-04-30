@@ -30,6 +30,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.networkcalculus.dnc.Calculator;
+import org.networkcalculus.dnc.curves.CurveFactory_Affine;
 import org.networkcalculus.dnc.curves.Curve_Affine;
 import org.networkcalculus.dnc.curves.Curve_PwAffine;
 import org.networkcalculus.dnc.curves.LinearSegment;
@@ -42,7 +43,7 @@ import ch.ethz.rtc.kernel.Curve;
 import ch.ethz.rtc.kernel.Segment;
 import ch.ethz.rtc.kernel.SegmentList;
 
-public class Curve_MPARTC_PwAffine extends MPARTC_Curve_Wrapper implements Curve_PwAffine {
+public class Curve_MPARTC_PwAffine extends MPARTC_Curve_Wrapper implements Curve_PwAffine, CurveFactory_Affine {
 	private static Curve_MPARTC_PwAffine instance = new Curve_MPARTC_PwAffine();
 
 	protected boolean is_delayed_infinite_burst = false;
