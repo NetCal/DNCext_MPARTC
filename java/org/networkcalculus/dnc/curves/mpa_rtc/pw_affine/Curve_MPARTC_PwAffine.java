@@ -30,21 +30,21 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.networkcalculus.dnc.Calculator;
+import org.networkcalculus.dnc.curves.CurveFactory_Affine;
 import org.networkcalculus.dnc.curves.Curve_Affine;
 import org.networkcalculus.dnc.curves.Curve_PwAffine;
 import org.networkcalculus.dnc.curves.LinearSegment;
 import org.networkcalculus.dnc.curves.mpa_rtc.Curves_MPARTC_Configuration;
 import org.networkcalculus.dnc.curves.mpa_rtc.LinearSegment_MPARTC;
+import org.networkcalculus.dnc.curves.mpa_rtc.MPARTC_Curve_Wrapper;
 import org.networkcalculus.num.Num;
 
 import ch.ethz.rtc.kernel.Curve;
 import ch.ethz.rtc.kernel.Segment;
 import ch.ethz.rtc.kernel.SegmentList;
 
-public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
+public class Curve_MPARTC_PwAffine extends MPARTC_Curve_Wrapper implements Curve_PwAffine, CurveFactory_Affine {
 	private static Curve_MPARTC_PwAffine instance = new Curve_MPARTC_PwAffine();
-
-	protected ch.ethz.rtc.kernel.Curve rtc_curve;
 
 	protected boolean is_delayed_infinite_burst = false;
 	protected boolean is_rate_latency = false;
@@ -91,8 +91,8 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 	// --------------------------------------------------------------------------------------------------------------
 
 	// Attention
-	// * Default behavior of the DiscoDNC cannot be reenacted with the RTC.
-	// * DiscoDNC initializes curves with overlapping (x,y,r)=(0,0,0) segments.
+	// * Default behavior of the DNC cannot be reenacted with the RTC.
+	// * DNC initializes curves with overlapping (x,y,r)=(0,0,0) segments.
 	// That causes an error with the RTC implementation.
 	// We initialize with (segment_number,segment_number,0) instead.
 	private void createZeroSegmentsCurve(int segment_count) {
@@ -101,10 +101,6 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 			segList_rtc.add(new Segment((double) i, (double) i, 0));
 		}
 		rtc_curve = new Curve(segList_rtc);
-	}
-
-	public Curve getRtc_curve() {
-		return rtc_curve;
 	}
 
 	// Accepts string representations of RTC as well as
@@ -702,7 +698,7 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 	// --------------------------------------------------------------------------------------------------------------
 
 	// ------------------------------------------------------------
-	// DiscoDNC compliance
+	// DNC compliance
 	// ------------------------------------------------------------
 	public Curve_MPARTC_PwAffine createCurve(List<LinearSegment> segments) {
 		Curve_MPARTC_PwAffine msc_rtc = new Curve_MPARTC_PwAffine();
@@ -743,7 +739,7 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 	// --------------------------------------------------------------------------------------------------------------
 
 	// ------------------------------------------------------------
-	// DiscoDNC compliance
+	// DNC compliance
 	// ------------------------------------------------------------
 	public ServiceCurve_MPARTC_PwAffine createServiceCurve() {
 		return new ServiceCurve_MPARTC_PwAffine();
@@ -801,7 +797,7 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 	// --------------------------------------------------------------------------------------------------------------
 
 	// ------------------------------------------------------------
-	// DiscoDNC compliance
+	// DNC compliance
 	// ------------------------------------------------------------
 	public ArrivalCurve_MPARTC_PwAffine createArrivalCurve() {
 		return new ArrivalCurve_MPARTC_PwAffine();
@@ -820,7 +816,7 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 	}
 
 	public ArrivalCurve_MPARTC_PwAffine createArrivalCurve(org.networkcalculus.dnc.curves.Curve curve, boolean remove_latency) {
-		return createArrivalCurve(org.networkcalculus.dnc.curves.Curve.removeLatency(curve));
+		return createArrivalCurve(org.networkcalculus.dnc.curves.Curve.getUtils().removeLatency(curve));
 	}
 
 	public ArrivalCurve_MPARTC_PwAffine createZeroArrivals() {
@@ -858,7 +854,7 @@ public class Curve_MPARTC_PwAffine implements Curve_PwAffine {
 	// --------------------------------------------------------------------------------------------------------------
 
 	// ------------------------------------------------------------
-	// DiscoDNC compliance
+	// DNC compliance
 	// ------------------------------------------------------------
 	public MaxServiceCurve_MPARTC_PwAffine createMaxServiceCurve() {
 		return new MaxServiceCurve_MPARTC_PwAffine();

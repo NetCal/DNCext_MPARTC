@@ -56,14 +56,14 @@ public enum Bounds_MPARTC_PwAffine implements Bounds {
 
     /**
      * MPA RTC does not have an implementation for finding the x-coordinate of
-     * two curves' first intersection. We have to use the DISCO implementation,
+     * two curves' first intersection. We have to use the implementation by DISCO,
      * relying on the curve interface compliance of the MPA RTC curve wrapper.
      * 
      * TODO: This restricts the entire class to non-periodic curves,
      *       a restriction inherited from the DISCO implementation. 
      */
     public Num delayARB(ArrivalCurve arrival_curve, ServiceCurve service_curve) {
-    	return Curve.getXIntersection(arrival_curve,service_curve);
+    	return Curve.getUtils().getXIntersection(arrival_curve,service_curve);
     }
 
     public Num delayFIFO(ArrivalCurve arrival_curve, ServiceCurve service_curve) {
