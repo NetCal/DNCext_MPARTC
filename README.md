@@ -11,7 +11,7 @@ This extension depends on the code restructuring of v2.5.0.
 Real-Time Calculus (RTC) is a branch of Deterministic Network Calculus.
 For its analysis, RTC uses the same curve definitions, min-plus-algebraic operations and bounding operations as Deterministic Network Calculus.
 For system modeling, RTC focusses more on components, making it a Modular Performance Analysis (MPA).
-The [MPA RTC toolbox](https://www.mpa.ethz.ch/Rtctoolbox) consists of implementations for both parts: 
+The [MPA RTC toolbox](https://www.mpa.ethz.ch) consists of implementations for both parts: 
 * the former (curve and algebra backend) is written in Java and its bytecode can be downloaded free of charge, 
 * the latter (modeling framework) is provided by an open-source Matlab integration.
 
